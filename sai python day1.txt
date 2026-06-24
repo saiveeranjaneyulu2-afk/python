@@ -1,0 +1,189 @@
+1. Grocery Store Billing with Discount
+Concepts to Use: for loop, if
+Example Data: prices = [500, 1200, 800, 1500]
+Task: Calculate the total bill. If an item price is greater than n1000, give a 10% discount on that
+item. Calculate the final bill after discount.
+Expected Output:
+Total Bill = 4000
+Discount = 270
+Final Bill = 3730
+Write Your Solution Below:
+prices = [500, 1200, 800, 1500]
+total_bill = 0
+discount = 0
+for price in prices:
+    total_bill += price
+    if price > 1000:
+        discount += price * 0.10
+    finial_bill = total_bill - discount
+    print("total bill: ",total_bill)
+    print("discount: ",int(discount))         
+    print("finial bill: ",int(finial_bill))
+
+2. Employee Attendance Percentage
+Concepts to Use: for loop, counting
+Example Data: attendance = ['P', 'A', 'P', 'P', 'A', 'P']
+Task: Calculate the total present days and attendance percentage.
+Expected Output:
+Present Days = 4
+Attendance Percentage = 66.67
+Write Your Solution Below:
+attendance = ['P', 'A', 'P', 'P', 'A', 'P']
+present_days = 0
+for days in attendance:
+    if days == 'P':
+        present_days += 1
+attendance = (present_days/len(attendance))*100
+print("present days:",present_days)
+print("attendance percentage:",attendance)
+
+3. Online Shopping Cart
+Concepts to Use: for loop, continue
+Example Data: cart = [500, -1, 700, 1200, -1, 300]
+Task: -1 means item removed from cart. Ignore removed items and calculate the total amount.
+Expected Output:
+Total Amount = 2700
+Write Your Solution Below:
+cart = [500, -1, 700, 1200, -1, 300]
+total_ammount = 0
+for i in cart:
+    if i < 0:
+        continue
+    total_ammount += i
+print(total_ammount)
+
+4. Bank Transactions
+Concepts to Use: for loop, break
+Example Data: transactions = [5000, -2000, -3000, -4000]
+balance = 6000
+Task: Process transactions one by one. Stop if the balance becomes negative. Display the final
+balance.
+Expected Output:
+Insufficient Balance
+Final Balance = 1000
+Write Your Solution Below:
+transactions = [5000, -2000, -3000, -4000]
+balance = 6000
+for i in transactions:
+    if i <0:
+        break
+    balance -= i
+print("Insufficient Balance")
+print("finial balance: ",balance)
+
+5. Cricket Tournament Analysis
+Concepts to Use: for loop
+Example Data: runs = [45, 80, 22, 95, 60]
+Task: Find the total runs, highest score, and average score.
+Expected Output:
+Total = 302
+Highest = 95
+Average = 60.4
+Write Your Solution Below:
+runs = [45, 80, 22, 95, 60]
+totalruns = 0
+score = runs[0]
+average = 0
+for i in runs:
+    totalruns+=i
+    if i>score:
+        score=i
+average=totalruns/len(runs)
+print("total runs:",totalruns)
+print("highest score:",score)
+print("avarage:",average)
+
+6. Electricity Consumption Billing
+Concepts to Use: while loop
+Example Data: units = [120, 150, 200, 180]
+Task: Calculate the electricity bill using: First 100 units = n5/unit Remaining units = n8/unit
+Expected Output:
+Calculate Total Bill
+Write Your Solution Below:
+units = [120, 150, 200, 180]
+total_bill = 0
+i = 0
+while i < len(units):
+    if units[i] <= 100:
+        total_bill += units[i]*5
+    else:
+        total_bill += 100 *5 +(units[i] - 100)*8
+    i +=1
+print("total bill: ",total_bill)
+
+7. Exam Result Processing
+Concepts to Use: for loop, counting
+Example Data: marks = [75, 30, 82, 40, 95, 28]
+Task: Count how many students passed and failed. Pass mark = 35.
+Expected Output:
+Passed = 4
+Failed = 2
+Write Your Solution Below:
+marks = [75, 30, 82, 40, 95, 28]
+passed_counting = 0
+failed_counting = 0
+for i in marks:
+    if i>=35:
+        passed_counting += 1
+    else:
+        failed_counting += 1
+print("passed:",passed_counting)
+print("failed:",failed_counting)
+
+8. Food Delivery Performance
+Concepts to Use: for loop, continue
+Example Data: ratings = [5, 4, 0, 3, 5, 0, 4]
+Task: 0 means not rated. Ignore those ratings and calculate the average rating.
+Expected Output:
+Average Rating = 4.2
+Write Your Solution Below:
+rating = [5, 4, 0, 3, 5, 0, 4]
+total = 0
+count = 0
+for i in rating:
+    if i==0:
+        continue
+    total+=i
+    count+=i
+print(total/count)
+
+9. ATM Cash Dispensing
+Concepts to Use: while loop
+Example Data: amount = 3700
+Task: Calculate the minimum number of notes required using n2000, n500, n200, and n100
+notes.
+Expected Output:
+2000 x 1
+500 x 3
+200 x 1
+Write Your Solution Below:
+amount = 3700
+notes = [2000, 500, 200, 100]
+i = 0
+while i<len(notes):
+    count = 0
+    while amount >= notes[i]:
+        amount -= notes[i]
+        count+=1
+    if count>0:
+        print(notes[i],"x", count)
+    i+=1
+
+10. Sales Report Generator
+Concepts to Use: for loop, break, continue
+Example Data: sales = [5000, 7000, -1, 9000, 0, 8000]
+Task: -1 means holiday (skip it). 0 means system crash (stop processing). Calculate total sales
+before crash.
+Expected Output:
+Total Sales = 21000
+Write Your Solution Below:
+sales = [5000, 7000, -1, 9000, 0, 8000]
+totalsales = 0
+for i in sales:
+    if i==-1:
+        continue
+    elif i==0:
+        break
+    else:
+        totalsales+=i
+print("total sales:",totalsales)
