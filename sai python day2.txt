@@ -1,0 +1,235 @@
+# 1. Longest Login Streak
+# Concepts to Use: for loop, counting
+# Example Data: logins = [1, 1, 0, 1, 1, 1, 0, 1]
+# Task: 1 means logged in and 0 means missed day. Find the longest continuous login streak.
+# Expected Output:
+# Longest Streak = 3
+# Write Your Solution Below:
+logins = [1, 1, 0, 1, 1, 1, 0, 1]
+current = 0
+longest = 0
+for login in logins:
+    if login == 1:
+        current += 1
+        if current > longest:
+            longest = current
+    else:
+        current = 0
+print("Longest Streak =", longest)
+
+# 2. Password Strength Checker
+# Concepts to Use: for loop, counting
+# Example Data: password = "Abc123X"
+# Task: Count uppercase letters, lowercase letters, and digits. Print Strong Password if it contains at
+# least one uppercase letter, one lowercase letter, and one digit.
+# Expected Output:
+# Uppercase = 2
+# Lowercase = 3
+# Digits = 3
+# Strong Password
+# Write Your Solution Below:
+# password = "Abc123X"
+# upper = 0
+# lower = 0
+# digits = 0
+# for ch in password:
+#     if 'A' <= ch <= 'Z':
+#         upper += 1
+#     elif 'a' <= ch <= 'z':
+#         lower += 1
+#     elif '0' <= ch <= '9':
+#         digits += 1
+# print("Uppercase =", upper)
+# print("Lowercase =", lower)
+# print("Digits =", digits)
+# if upper >= 1 and lower >= 1 and digits >= 1:
+#     print("Strong Password")
+
+# 3. Warehouse Stock Alert
+# Concepts to Use: for loop, continue
+# Example Data: stock = [25, 5, 0, 18, 3, 40]
+# Task: Ignore products with stock 0. Count how many products need restocking (stock less than 10).
+# Expected Output:
+# Products To Restock = 2
+# Write Your Solution Below:
+# stock = [25, 5, 0, 18, 3, 40]
+# restock = 0
+# for item in stock:
+#     if item == 0:
+#         continue
+#     if item < 10:
+#         restock += 1
+# print("Products To Restock =", restock)
+
+# 4. Bus Seat Occupancy
+# Concepts to Use: while loop
+# Example Data: seats = [1, 0, 1, 1, 0, 0, 1]
+# Task: 1 means occupied and 0 means empty. Calculate occupied seats, empty seats, and
+# occupancy percentage.
+# Expected Output:
+# Occupied = 4
+# Empty = 3
+# Occupancy = 57.14%
+# Write Your Solution Below:
+# seats = [1, 0, 1, 1, 0, 0, 1]
+# occupied = 0
+# empty = 0
+# i = 0
+# while i < len(seats):
+#     if seats[i] == 1:
+#         occupied += 1
+#     else:
+#         empty += 1
+#     i += 1
+# percentage = (occupied * 100) / (occupied + empty)
+# print("Occupied =", occupied)
+# print("Empty =", empty)
+# print("Occupancy =", percentage)
+
+# 5. Consecutive Failures Detector
+# Concepts to Use: for loop, break
+# Example Data: results = ['P', 'P', 'F', 'F', 'F', 'P']
+# Task: Stop processing when 3 consecutive failures occur.
+# Expected Output:
+# 3 Consecutive Failures Found
+# Write Your Solution Below:
+# results = ['P', 'P', 'F', 'F', 'F', 'P']
+# failures = 0
+# found = False
+# for result in results:
+#     if result == 'F':
+#         failures += 1
+#     else:
+#         failures = 0
+#     if failures == 3:
+#         found = True
+# if found:
+#     print("3 Consecutive Failures Found")
+
+# 6. Product Return Analysis
+# Concepts to Use: for loop
+# Example Data: orders = [500, 800, -500, 1000, -800]
+# Task: Positive values are sales and negative values are returns. Calculate total sales, total returns,
+# and net revenue.
+# Expected Output:
+# Sales = 2300
+# Returns = 1300
+# Net Revenue = 1000
+# Write Your Solution Below:
+# orders = [500, 800, -500, 1000, -800]
+# sales = 0
+# returns = 0
+# for amount in orders:
+#     if amount > 0:
+#         sales += amount
+#     else:
+#         returns += -amount
+# net_revenue = sales - returns
+# print("Sales =", sales)
+# print("Returns =", returns)
+# print("Net Revenue =", net_revenue)
+
+# 7. Mobile Data Usage Tracker
+# Concepts to Use: while loop
+# Example Data: usage = [450, 600, 700, 550], limit = 2000
+# Task: Process usage day by day and stop when the limit is exceeded.
+# Expected Output:
+# Limit Exceeded On Day 4
+# Used = 2300 MB
+# Write Your Solution Below:
+usage = [450, 600, 700, 550]
+limit = 2000
+total = 0
+day = 0
+exceeded_day = 0
+while day < len(usage):
+    total += usage[day]
+    if total > limit and exceeded_day == 0:
+        exceeded_day = day + 1
+    day += 1
+print("Limit Exceeded On Day", exceeded_day)
+print("Used =", total, "MB")
+
+# 8. Voting Machine Result
+# Concepts to Use: for loop
+# Example Data: votes = ['A', 'B', 'A', 'C', 'A', 'B', 'A']
+# Task: Count votes for each candidate and find the winner.
+# Expected Output:
+# A = 4
+# B = 2
+# C = 1
+# Winner = A
+# Write Your Solution Below:
+votes = ['A', 'B', 'A', 'C', 'A', 'B', 'A']
+a = 0
+b = 0
+c = 0
+for vote in votes:
+    if vote == 'A':
+        a += 1
+    elif vote == 'B':
+        b += 1
+    elif vote == 'C':
+        c += 1
+winner = 'A'
+if b > a and b > c:
+    winner = 'B'
+elif c > a and c > b:
+    winner = 'C'
+print("A =", a)
+print("B =", b)
+print("C =", c)
+print("Winner =", winner)
+
+# 9. Parking Lot Management
+# Concepts to Use: for loop, counting
+# Example Data: vehicles = ['C', 'B', 'C', 'T', 'B', 'C']
+# Task: Count Cars, Bikes, and Trucks.
+# Expected Output:
+# Cars = 3
+# Bikes = 2
+# Trucks = 1
+# Write Your Solution Below:
+vehicles = ['C', 'B', 'C', 'T', 'B', 'C']
+cars = 0
+bikes = 0
+trucks = 0
+for vehicle in vehicles:
+    if vehicle == 'C':
+        cars += 1
+    elif vehicle == 'B':
+        bikes += 1
+    elif vehicle == 'T':
+        trucks += 1
+print("Cars =", cars)
+print("Bikes =", bikes)
+print("Trucks =", trucks)
+
+# 10. Number Sequence Analyzer
+# Concepts to Use: for loop
+# Example Data: numbers = [12, 5, 8, 21, 14, 7]
+# Task: Find number of even numbers, odd numbers, largest number, and smallest number.
+# Expected Output:
+# Even = 3
+# Odd = 3
+# Largest = 21
+# Smallest = 5
+# Write Your Solution Below:
+numbers = [12, 5, 8, 21, 14, 7]
+even = 0
+odd = 0
+largest = numbers[0]
+smallest = numbers[0]
+for num in numbers:
+    if num % 2 == 0:
+        even += 1
+    else:
+        odd += 1
+    if num > largest:
+        largest = num
+    if num < smallest:
+        smallest = num
+print("Even =", even)
+print("Odd =", odd)
+print("Largest =", largest)
+print("Smallest =", smallest)
