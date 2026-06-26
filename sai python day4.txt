@@ -1,0 +1,133 @@
+1. Running Sum Triangle
+Concepts to Use: Nested for loop, Addition
+Example Data: n = 5
+Task: For each row, add numbers from 1 up to that row number.
+Expected Output:
+num = int(input("enter a number: "))
+for i in range(1,num + 1):
+    total = 0
+    for j in range(1,i+1):
+        total +=j
+    print(f'row {i}: sum {total}')
+
+2. Multiplication Table Statistics
+Concepts to Use: Nested for loop, Counting
+Example Data: Tables 2 to 10
+Task: Count how many multiplication results are less than 20, between 20 and 50, and greater than
+50.
+Expected Output:
+less = 0
+between = 0
+greater = 0
+for i in range(2, 11):
+    for j in range(1, 11):
+        result = i * j
+        if result < 20:
+            less += 1
+        elif 20 <= result <= 50:
+            between += 1
+        else:
+            greater += 1
+print("Count of results < 20:", less)
+print("Count of results between 20 and 50:", between)
+print("Count of results > 50:", greater)
+
+3. Student Marks Competition
+Concepts to Use: Nested for loop, Comparison
+Example Data: marks = [85, 70, 92, 78, 88]
+Task: For each student count how many students scored more than them.
+Expected Output:
+marks = [85, 70, 92, 78, 88]
+for i in range(len(marks)):
+    count = 0
+    for j in range(len(marks)):
+        if marks[j] > marks[i]:
+            count += 1
+    print("Student", i+1, "with marks", marks[i], 
+          "has", count, "students scor more.")
+
+4. Sales Leaderboard
+Concepts to Use: Nested for loop, Ranking
+Example Data: sales = [500, 900, 700, 1200]
+Task: Find rank of every salesperson:
+Program to find rank of each salesperson
+sales = [500, 900, 700, 1200]
+for i in range(len(sales)):
+    rank = 1
+    for j in range(len(sales)):
+        if sales[j] > sales[i]:
+            rank += 1
+    print("Salesperson", i+1, "with sales", sales[i], 
+          "has rank", rank)
+
+5. Pair Sum Finder
+Concepts to Use: Nested for loop
+Example Data:
+numbers = [2, 5, 7, 8, 3]
+target = 10
+Task: Print all pairs whose sum is 10.
+Expected Output:
+Program to print all pairs whose sum is equal to target
+numbers = [2, 5, 7, 8, 3]
+target = 10
+for i in range(len(numbers)):
+    for j in range(i+1, len(numbers)):
+        if numbers[i] + numbers[j] == target:
+            print("Pair:", numbers[i], "and", numbers[j])
+
+6. Pair Product Finder
+Concepts to Use: Nested for loop
+Example Data:
+numbers = [2, 3, 4, 6, 8]
+target = 24
+Task: Print all pairs whose product is 24.
+Expected Output:
+numbers = [2, 3, 4, 6, 8]
+target = 24
+for i in range(len(numbers)):
+    for j in range(i+1, len(numbers)):
+        if numbers[i] * numbers[j] == target:
+            print("Pair:", numbers[i], "and", numbers[j])
+
+7. Matrix Total
+Concepts to Use: Nested for loop
+Example Data:
+[[10,20,30],[40,50,60],[70,80,90]]
+Task: Find total of all values.
+Expected Output:
+data =  [[10,20,30],[40,50,60],[70,80,90]]
+for i in range(len(data)):
+    row_sum = 0
+    for j in range(len(data[i])):
+        row_sum += data[i][j]
+    print("Sum of row", i+1, "=", row_sum)
+
+9. Match Schedule Generator
+Concepts to Use: Nested for loop
+Example Data:
+teams = ['A', 'B', 'C', 'D']
+Task: Generate all matches.
+Expected Output:
+teams = ['A', 'B', 'C', 'D']
+for i in range(len(teams)):
+    for j in range(i+1, len(teams)):
+        print("Match:", teams[i], "vs", teams[j])
+
+10. Highest Row Total
+Concepts to Use: Nested for loop, Comparison
+Example Data:
+[[10,20,30],[50,60,70],[15,25,35]]
+Task: Find row having highest total.
+Expected Output:
+numb = [[10,20,30],[50,60,70],[15,25,35]]
+sum = 0
+row = -1
+for i in range(len(numb)):
+    row_sum = 0
+    for j in range(len(numb[i])):
+        row_sum += numb[i][j]
+    print("Sum of row", i+1, "=", row_sum)
+    if row_sum > sum:
+        sum = row_sum
+        row = i+1
+print("highest total is", row, "with sum =", sum)
